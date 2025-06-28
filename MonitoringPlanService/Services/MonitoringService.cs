@@ -1,25 +1,17 @@
-﻿using BenchmarkDotNet.Attributes;
-using Microsoft.Extensions.Configuration;
+﻿using Microsoft.Extensions.Configuration;
 using MonitoringPlanService.Models;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.IO.Compression;
-using System.Linq;
 using System.Text;
 using System.Text.Json;
-using System.Threading.Tasks;
 
 namespace MonitoringPlanService.Services
 {
-    [MemoryDiagnoser]
     public class MonitoringService
     {
         private readonly HttpClient _httpClient;
 
         public MonitoringService() => _httpClient = new();
 
-        [Benchmark]
         public async Task<MonitoringPlan> GetMonitoringPlanAsync()
         {
             _httpClient.DefaultRequestHeaders.AcceptEncoding.Add(new("gzip"));

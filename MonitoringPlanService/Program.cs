@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using BenchmarkDotNet.Running;
 using Microsoft.Extensions.DependencyInjection;
 using MonitoringPlanService.Services;
 using MonitoringPlanService.UI;
